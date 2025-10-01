@@ -1,0 +1,7 @@
+{
+  "name": "Bogotá a Cielo Abierto: Museo Virtual",
+  "description": "An interactive web application to guide users through the art and culture of Bogotá's 'Bogotá a Cielo Abierto' program, acting as a virtual open-air museum guide powered by AI.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogotá a Cielo Abierto: Museo Virtual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jsQR library for QR code scanning -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <!-- Google Fonts for the new "Figtree" font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+      /* Custom scrollbar for a more polished look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #E0F2FE; /* Light sky blue track */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #F59E0B; /* Amber accent */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D97706; /* Darker amber */
+      }
+      body, html, #root {
+        height: 100%;
+      }
+      body {
+        font-family: 'Figtree', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Figtree', sans-serif;
+        font-weight: 600;
+      }
+      /* Ensure map tiles are not distorted */
+      .leaflet-tile-pane {
+        -webkit-filter: inherit;
+        filter: inherit;
+      }
+      .leaflet-popup-content-wrapper {
+        border-radius: 12px;
+      }
+      .leaflet-popup-content {
+        margin: 0;
+        padding: 0;
+      }
+      /* Accessibility Mode Styles */
+      .accessibility-mode {
+        font-size: 1.1rem; /* Increase base font size */
+      }
+      .accessibility-mode .bg-white {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+      }
+      .accessibility-mode .bg-sky-50, .accessibility-mode .bg-gray-50, .accessibility-mode .bg-gray-100 {
+        background-color: #1a1a1a !important;
+      }
+      .accessibility-mode .text-gray-800, 
+      .accessibility-mode .text-gray-700,
+      .accessibility-mode .text-gray-600,
+      .accessibility-mode .text-gray-500 {
+        color: #FFFFFF !important;
+      }
+       .accessibility-mode .border-gray-200, .accessibility-mode .border-gray-300 {
+        border-color: #555555 !important;
+      }
+      .accessibility-mode .text-amber-500 {
+        color: #FBBF24 !important; /* Brighter yellow for contrast */
+      }
+      .accessibility-mode .bg-amber-500 {
+        background-color: #FBBF24 !important;
+        color: #000000 !important;
+      }
+      .accessibility-mode button {
+         border: 1px solid #FBBF24;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+    "jsqr": "https://aistudiocdn.com/jsqr@^1.4.0",
+    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4",
+    "react-leaflet": "https://aistudiocdn.com/react-leaflet@^4.2.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-sky-50 text-gray-800 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
